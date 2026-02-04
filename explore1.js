@@ -1,97 +1,97 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawStart() → what the start/menu screen looks like
+// 1) drawExplore1() → what the first explore screen looks like
 // 2) input handlers → what happens on click / key press on this screen
 // 3) a helper function to draw menu buttons
 
 // ------------------------------------------------------------
-// Start screen visuals
+// Explore1 screen visuals
 // ------------------------------------------------------------
-// drawStart() is called from main.js only when:
-// currentScreen === "start"
-function drawStart() {
-  // Background colour for the start screen
+// drawExplore1() is called from main.js only when:
+// currentScreen === "explore1"
+function drawExplore1() {
+  // Background colour for the first explore screen
   background(180, 225, 220); // soft teal background
 
   // ---- Title text ----
   fill(30, 50, 60);
   textSize(46);
   textAlign(CENTER, CENTER);
-  text("Chud's Nutty Adventure", width / 2, 180);
+  text("Where should Chud explore first?", width / 2, 180);
 
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
   // Using objects makes it easy to pass them into drawButton()
   // and also reuse the same information for hover checks.
-  const startBtn = {
+  const darkcaveBtn = {
     x: width / 2,
     y: 320,
     w: 240,
     h: 80,
-    label: "START",
+    label: "DARK CAVE",
   };
 
-  const instrBtn = {
+  const daisymeadowBtn = {
     x: width / 2,
     y: 430,
     w: 240,
     h: 80,
-    label: "INSTRUCTIONS",
+    label: "DAISY MEADOW",
   };
 
   // Draw both buttons
-  drawButton(startBtn);
-  drawButton(instrBtn);
+  drawButton(darkcaveBtn);
+  drawButton(daisymeadowBtn);
 
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
   // so the player knows it is clickable.
-  const over = isHover(startBtn) || isHover(instrBtn);
+  const over = isHover(darkcaveBtn) || isHover(daisymeadowBtn);
   cursor(over ? HAND : ARROW);
 }
 
 // ------------------------------------------------------------
-// Mouse input for the start screen
+// Mouse input for the first explore screen
 // ------------------------------------------------------------
-// Called from main.js only when currentScreen === "start"
-function startMousePressed() {
+// Called from main.js only when currentScreen === "explore1"
+function explore1MousePressed() {
   // For input checks, we only need x,y,w,h (label is optional)
-  const startBtn = { x: width / 2, y: 320, w: 240, h: 80 };
-  const instrBtn = { x: width / 2, y: 430, w: 240, h: 80 };
+  const darkcaveBtn = { x: width / 2, y: 320, w: 240, h: 80 };
+  const daisymeadowBtn = { x: width / 2, y: 430, w: 240, h: 80 };
 
-  // If START is clicked, go to the first explore screen
-  if (isHover(startBtn)) {
-    currentScreen = "explore1";
+  // If DARK CAVE is clicked, go to the dark cave screen
+  if (isHover(darkcaveBtn)) {
+    currentScreen = "darkcave";
   }
-  // If INSTRUCTIONS is clicked, go to the instructions screen
-  else if (isHover(instrBtn)) {
-    currentScreen = "instr";
+  // If DAISY MEADOW is clicked, go to the daisy meadow screen
+  else if (isHover(daisymeadowBtn)) {
+    currentScreen = "daisymeadow";
   }
 }
 
 // ------------------------------------------------------------
-// Keyboard input for the start screen
+// Keyboard input for the start screen EDIT: NO KEYBOARD INPUTS FOR EXPLORE SCREENS
 // ------------------------------------------------------------
 // Provides keyboard shortcuts:
 // - ENTER starts the game
 // - I opens instructions
-function startKeyPressed() {
-  if (keyCode === ENTER) {
-    currentScreen = "explore1";
-  }
+// function startKeyPressed() {
+//   if (keyCode === ENTER) {
+//     currentScreen = "game";
+//   }
 
-  if (key === "i" || key === "I") {
-    currentScreen = "instr";
-  }
-}
+//   if (key === "i" || key === "I") {
+//     currentScreen = "instr";
+//   }
+// }
 
 // ------------------------------------------------------------
 // Helper: drawButton()
 // ------------------------------------------------------------
 // This function draws a button and changes its appearance on hover.
 // It does NOT decide what happens when you click the button.
-// That logic lives in startMousePressed() above.
+// That logic lives in explore1MousePressed() above.
 //
 // Keeping drawing separate from input/logic makes code easier to read.
 function drawButton({ x, y, w, h, label }) {
@@ -135,4 +135,3 @@ function drawButton({ x, y, w, h, label }) {
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
-// David suggests keeping 2 choices on the start page, and then duplicating; add visual flair

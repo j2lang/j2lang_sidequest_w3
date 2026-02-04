@@ -53,6 +53,9 @@ function draw() {
   else if (currentScreen === "game") drawGame();
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "lose") drawLose();
+  else if (currentScreen === "explore1") drawExplore1();
+  else if (currentScreen === "darkcave") drawDarkcave();
+  else if (currentScreen === "daisymeadow") drawDaisymeadow();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -80,6 +83,8 @@ function mousePressed() {
   // This prevents errors if a screen doesn’t implement a handler.
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
+  else if (currentScreen === "explore1") explore1MousePressed();
+  else if (currentScreen === "daisymeadow") daisymeadowMousePressed();
 }
 
 // ------------------------------

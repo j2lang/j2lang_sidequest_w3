@@ -5,7 +5,7 @@
 // 2) input handlers → how the player returns to the explore screen
 // 3) helper functions specific to this screen
 
-let nutFound = false;
+let treetopsNutFound = false;
 
 // ------------------------------
 // Main draw function for treetops screen
@@ -13,10 +13,6 @@ let nutFound = false;
 // drawTreetops() is called from main.js
 // only when currentScreen === "treetops"
 function drawTreetops() {
-if (!nutFound) {
-  nutCounter++;
-  nutFound = true;
-}
   // Light neutral background
   background(240);
 
@@ -63,6 +59,11 @@ function treetopsMousePressed() {
 
   // If the button is clicked, go to the next screen
   if (isHover(backBtn)) {
+if (!treetopsNutFound) {
+  nutCounter++;
+  treetopsNutFound = true;
+}
+    
     currentScreen = "explore3";
   }
 }

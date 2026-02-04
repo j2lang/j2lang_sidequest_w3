@@ -5,7 +5,7 @@
 // 2) input handlers → how the player returns to the explore screen
 // 3) helper functions specific to this screen
 
-let nutFound = false;
+let darkcaveNutFound = false;
 
 // ------------------------------
 // Main draw function for dark cave screen
@@ -13,10 +13,6 @@ let nutFound = false;
 // drawDarkcave() is called from main.js
 // only when currentScreen === "darkcave"
 function drawDarkcave() {
-  if (!nutFound) {
-  nutCounter++;
-  nutFound = true;
-}
   // Light neutral background
   background(240);
 
@@ -64,6 +60,11 @@ function darkcaveMousePressed() {
 
   // If the button is clicked, go to the next explore screen
   if (isHover(backBtn)) {
+if (!darkcaveNutFound) {
+  nutCounter++;
+  darkcaveNutFound = true;
+}
+
     currentScreen = "explore2";
   }
 }

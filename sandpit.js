@@ -58,7 +58,11 @@ function sandpitMousePressed() {
 
   // If the button is clicked, go to the final screen
   if (isHover(backBtn)) {
-    currentScreen = "explore3";
+    if (nutCounter >= 3) {
+  currentScreen = "win";
+} else {
+  currentScreen = "lose";
+}
   }
 }
 

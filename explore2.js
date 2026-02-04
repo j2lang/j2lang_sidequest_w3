@@ -102,6 +102,12 @@ function drawButton({ x, y, w, h, label }) {
 
   noStroke();
 
+  // ---- Nut counter ----
+fill(0);
+textSize(16);
+textAlign(CENTER, BOTTOM);
+text(`Nut Counter: ${nutCounter}`, width / 2, height - 20);
+  
   // ---- Visual feedback (hover vs not hover) ----
   // This is a common UI idea:
   // - normal state is calmer

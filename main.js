@@ -23,6 +23,9 @@
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
+// Nut Counter
+let nutCounter = 0;
+
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------

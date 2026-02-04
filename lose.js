@@ -23,6 +23,11 @@ function drawLose() {
   // Instruction text
   textSize(20);
   text("Click or press R to return to Start.", width / 2, 360);
+
+    // Nut Counter
+  textSize(18);
+textAlign(CENTER);
+text(`Nut Counter: ${nutCounter}`, width / 2, height - 40);
 }
 
 // ------------------------------

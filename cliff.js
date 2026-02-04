@@ -5,12 +5,18 @@
 // 2) input handlers → how the player returns to the explore screen
 // 3) helper functions specific to this screen
 
+let nutFound = false;
+
 // ------------------------------
 // Main draw function for cliff screen
 // ------------------------------
 // drawCliff() is called from main.js
 // only when currentScreen === "cliff"
 function drawCliff() {
+  if (!nutFound) {
+  nutCounter++;
+  nutFound = true;
+}
   // Light neutral background
   background(240);
 
@@ -58,7 +64,11 @@ function cliffMousePressed() {
 
   // If the button is clicked, go to the next screen
   if (isHover(backBtn)) {
-    currentScreen = "explore3";
+    if (nutCounter >= 3) {
+  currentScreen = "win";
+} else {
+  currentScreen = "lose";
+}
   }
 }
 

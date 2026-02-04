@@ -84,6 +84,7 @@ function mousePressed() {
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
   else if (currentScreen === "explore1") explore1MousePressed();
+  else if (currentScreen === "darkcave") darkcaveMousePressed();
   else if (currentScreen === "daisymeadow") daisymeadowMousePressed();
 }
 

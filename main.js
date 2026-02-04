@@ -54,8 +54,14 @@ function draw() {
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "lose") drawLose();
   else if (currentScreen === "explore1") drawExplore1();
+  else if (currentScreen === "explore2") drawExplore2();
+  else if (currentScreen === "explore3") drawExplore3();
   else if (currentScreen === "darkcave") drawDarkcave();
   else if (currentScreen === "daisymeadow") drawDaisymeadow();
+  else if (currentScreen === "fishpond") drawFishpond();
+  else if (currentScreen === "treetops") drawTreetops();
+  else if (currentScreen === "sandpit") drawSandpit();
+  else if (currentScreen === "cliff") drawCliff();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -84,8 +90,14 @@ function mousePressed() {
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
   else if (currentScreen === "explore1") explore1MousePressed();
+  else if (currentScreen === "explore2") explore2MousePressed();
+  else if (currentScreen === "explore3") explore3MousePressed();
   else if (currentScreen === "darkcave") darkcaveMousePressed();
   else if (currentScreen === "daisymeadow") daisymeadowMousePressed();
+  else if (currentScreen === "fishpond") fishpondMousePressed();
+  else if (currentScreen === "treetops") treetopsMousePressed();
+  else if (currentScreen === "sandpit") sandpitMousePressed();
+  else if (currentScreen === "cliff") cliffMousePressed();
 }
 
 // ------------------------------

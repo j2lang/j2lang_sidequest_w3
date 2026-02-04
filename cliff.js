@@ -1,16 +1,16 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawDaisymeadow() → what the daisy meadow screen looks like
+// 1) drawCliff() → what the cliff screen looks like
 // 2) input handlers → how the player returns to the explore screen
 // 3) helper functions specific to this screen
 
 // ------------------------------
-// Main draw function for daisy meadow screen
+// Main draw function for cliff screen
 // ------------------------------
-// drawDaisymeadow() is called from main.js
-// only when currentScreen === "daisymeadow"
-function drawDaisymeadow() {
+// drawCliff() is called from main.js
+// only when currentScreen === "cliff"
+function drawCliff() {
   // Light neutral background
   background(240);
 
@@ -18,20 +18,21 @@ function drawDaisymeadow() {
   fill(0);
   textAlign(CENTER, TOP);
   textSize(36);
-  text("Daisy Meadow", width / 2, 80);
+  text("Cliff Face", width / 2, 80);
 
-  // ---- Daisy Meadow text ----
+  // ---- Cliff text ----
   textSize(18);
 
   // \n creates a line break in the text
   // This is useful for simple multi-line descriptions
-  const lines = `Uh oh... Chud is allergic to daisies! And there’s no
-nuts here... let’s get outta here! Achoo!`;
+  const lines = `Woah, we’re high up! We gotta be careful or else
+Chud’s gonna turn into a squirrel pancake! Look
+over there — a nut! Yahoooo`;
 
   text(lines, width / 2, 160);
 
   // ---- Back button ----
-  // This button lets the player navigate to the next explore screen
+  // This button lets the player navigate to the final screen
   const backBtn = {
     x: width / 2, // centred horizontally
     y: 560,
@@ -41,23 +42,23 @@ nuts here... let’s get outta here! Achoo!`;
   };
 
   // Draw the back button
-  drawDaisymeadowButton(backBtn);
+  drawCliffButton(backBtn);
 
   // Change cursor when hovering over the button
   cursor(isHover(backBtn) ? HAND : ARROW);
 }
 
 // ------------------------------
-// Mouse input for daisy meadow screen
+// Mouse input for cliff screen
 // ------------------------------
-// Called from main.js only when currentScreen === "daisymeadow"
-function daisymeadowMousePressed() {
+// Called from main.js only when currentScreen === "cliff"
+function cliffMousePressed() {
   // Button data must match the draw position
   const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
 
-  // If the button is clicked, go to the next explore screen
+  // If the button is clicked, go to the next screen
   if (isHover(backBtn)) {
-    currentScreen = "explore2";
+    currentScreen = "explore3";
   }
 }
 
@@ -78,12 +79,12 @@ function daisymeadowMousePressed() {
 // }
 
 // ------------------------------
-// Button drawing helper (daisy meadow screen)
+// Button drawing helper (cliff screen)
 // ------------------------------
 // This function is only responsible for drawing the button.
 // It is kept separate so the visual style can be changed
 // without touching input or game logic.
-function drawDaisymeadowButton({ x, y, w, h, label }) {
+function drawCliffButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check whether the mouse is hovering over the button

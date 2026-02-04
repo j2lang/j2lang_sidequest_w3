@@ -56,9 +56,9 @@ function darkcaveMousePressed() {
   // Button data must match the draw position
   const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
 
-  // If the button is clicked, go to the explore2 screen
+  // If the button is clicked, go to the next explore screen
   if (isHover(backBtn)) {
-    currentScreen = "explore1";
+    currentScreen = "explore2";
   }
 }
 

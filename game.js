@@ -75,7 +75,7 @@ function drawGameButton({ x, y, w, h, label }) {
   );
 
   // Draw the button rectangle
-  rect(x, y, w, h, 14); // last value = rounded corners
+  rect(x, y, w, h, 44); // last value = rounded corners
 
   // Draw the button text
   fill(0);

@@ -18,7 +18,7 @@ function drawStart() {
   fill(30, 50, 60);
   textSize(46);
   textAlign(CENTER, CENTER);
-  text("Win or Lose", width / 2, 180);
+  text("Chud's Nutty Adventure", width / 2, 180);
 
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
@@ -135,3 +135,4 @@ function drawButton({ x, y, w, h, label }) {
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
+// David suggests keeping 2 choices on the start page, and then duplicating; add visual flair

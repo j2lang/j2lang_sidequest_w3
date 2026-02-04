@@ -25,8 +25,11 @@ function drawInstr() {
 
   // \n creates a line break in the text
   // This is useful for simple multi-line instructions
-  const lines =
-    "Press the game button.\n" + "You have a chance to win or lose!";
+  const lines = `Winter is coming! Help Chud the Squirrel collect enough nuts
+to last him through the season. Luckily, Chud is on a diet and only needs
+to find 3 nuts in order to be fed and full for these long, cold months.
+
+Press START if you're ready to scavenge!`;
 
   text(lines, width / 2, 160);
 

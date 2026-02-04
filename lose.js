@@ -18,11 +18,11 @@ function drawLose() {
 
   // Main message
   textSize(40);
-  text("You Lose!", width / 2, 300);
+  text("Uh oh...", width / 2, 300);
 
   // Instruction text
   textSize(20);
-  text("Click or press R to return to Start.", width / 2, 360);
+  text("Looks like you didn’t collect enough nuts to last Chud through the winter:(\nClick or press R to return to Start.", width / 2, 360);
 
     // Nut Counter
   textSize(18);

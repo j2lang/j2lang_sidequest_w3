@@ -22,11 +22,11 @@ function drawWin() {
 
   // Main success message
   textSize(40);
-  text("You Win!", width / 2, 300);
+  text("Congratulations!", width / 2, 300);
 
   // Instruction text
   textSize(20);
-  text("Click or press R to return to Start.", width / 2, 360);
+  text("You helped Chud collect enough nuts to last him through the winter.\nClick or press R to return to Start.", width / 2, 360);
 
   // Nut Counter
   textSize(18);
